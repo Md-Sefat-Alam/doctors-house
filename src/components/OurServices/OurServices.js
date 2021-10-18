@@ -2,8 +2,7 @@ import React from 'react';
 
 const OurServices = () => {
     return (
-        <div>
-            services page
+        <div className='component-container'>
         </div>
     );
 };

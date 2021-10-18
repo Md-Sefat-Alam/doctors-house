@@ -5,6 +5,7 @@ import Home from './components/Home/Home';
 import OurServices from './components/OurServices/OurServices';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

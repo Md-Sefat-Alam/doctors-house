@@ -1,2 +1,5 @@
 .App {
 }
+.component-container{
+    min-height: 90vh;
+}

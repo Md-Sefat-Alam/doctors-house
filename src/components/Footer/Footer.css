@@ -1,0 +1,26 @@
+footer{
+    height: 350px;
+}
+
+footer .footer-wrapper{
+    height: 350px;
+    
+}
+footer .footer-wrapper .footer-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.joinWithUs{
+    display: flex;
+}
+.joinWithUs{
+}
+.joinWithUs li{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 5px;
+    font-size: 30px;
+
+}

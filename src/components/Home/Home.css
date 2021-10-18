@@ -1,0 +1,11 @@
+/* .carousel{
+    max-height: 90vh;
+} */
+
+/* #carouselExampleDark{
+    width: 500px;
+    height: 500px;
+} */
+.carousel-inner{
+    max-height: 88vh;
+}
