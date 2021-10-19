@@ -32,9 +32,9 @@ const Footer = () => {
 
                     <h3>Join With Us</h3>
                     <ul className='joinWithUs'>
-                        <li><a rel="noreferrer" href="https://www.facebook.com/sefat.sefatalam" target='_blank'><i class="fab fa-facebook"></i></a></li>
-                        <li><a rel="noreferrer" href="https://www.youtube.com/" target='_blank'><i class="fab fa-youtube"></i></a></li>
-                        <li><a rel="noreferrer" href="https://twitter.com/" target='_blank'><i class="fab fa-twitter-square"></i></a></li>
+                        <li><a rel="noreferrer" href="https://www.facebook.com/sefat.sefatalam" target='_blank'><i className="fab fa-facebook"></i></a></li>
+                        <li><a rel="noreferrer" href="https://www.youtube.com/" target='_blank'><i className="fab fa-youtube"></i></a></li>
+                        <li><a rel="noreferrer" href="https://twitter.com/" target='_blank'><i className="fab fa-twitter-square"></i></a></li>
                     </ul>
                 </div>
                 <div className='bg-dark'>
