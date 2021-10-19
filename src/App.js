@@ -6,8 +6,11 @@ import OurServices from './components/OurServices/OurServices';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
 import Footer from './components/Footer/Footer';
-import AuthProvider from './components/context/AuthProvider';
+import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
+import Register from './components/Register/Register';
+import PrivetRoute from './components/PrivetRoute/PrivetRoute';
+
 
 function App() {
   return (
@@ -22,11 +25,14 @@ function App() {
             <Route path='/home'>
               <Home></Home>
             </Route>
-            <Route path='/services'>
+            <PrivetRoute path='/services'>
               <OurServices></OurServices>
-            </Route>
+            </PrivetRoute>
             <Route path='/login'>
               <Login></Login>
+            </Route>
+            <Route path='/register'>
+              <Register></Register>
             </Route>
             <Route path='*'>
               <NotFound></NotFound>

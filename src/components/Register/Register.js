@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
-const Login = () => {
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
+import FirebaseInit from '../../Firebase/FirebaseInit';
+
+FirebaseInit()
+
+const Register = () => {
     const { googleSignIn, setUserData, setError, setIsLoading } = useAuth();
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || '/home';
-
 
     const handleGoogleLogin = () => {
         googleSignIn()
@@ -26,7 +31,6 @@ const Login = () => {
                 setIsLoading(false)
             })
     }
-    console.log(location.state?.from);
 
     const handleEmail = e => {
         setEmail(e.target.value);
@@ -34,18 +38,22 @@ const Login = () => {
     const handlePassword = e => {
         setPassword(e.target.value);
     }
-    const handleEmailPasswordLogin = (e,) => {
+
+    const handleEmailPasswordRegister = (e) => {
         e.preventDefault()
         const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                setUserData(result.user);
+                alert('Register Successful')
+                history.push('/home')
             })
             .catch(error => {
-                setError(error.code)
+                setError(error.code);
+                console.log(error.code);
+            })
+            .finally(() => {
             })
     }
-
     return (
         <div className='component-container container'>
             <div style={{
@@ -57,8 +65,8 @@ const Login = () => {
                 height: '90vh'
             }}>
                 <div className='w-50'>
-                    <form onSubmit={handleEmailPasswordLogin}>
-                        <h3 className='fw-bold text-primary py-3'>Please Login</h3>
+                    <form onSubmit={handleEmailPasswordRegister}>
+                        <h3 className='fw-bold text-warning py-3'>Please Register and Login</h3>
                         <div className="row mb-3">
                             <label htmlFor="inputEmail3" className="col-sm-2 col-form-label">Email</label>
                             <div className="col-sm-10">
@@ -73,8 +81,8 @@ const Login = () => {
                         </div>
 
                         <div className='d-flex justify-content-between'>
-                            <button type="submit" className="btn btn-primary">Sign in</button>
-                            <Link to='./register' className='btn btn-warning'>Register?</Link>
+                            <button type="submit" className="btn btn-primary">Register</button>
+                            <Link to='./login' className='btn btn-warning'>All Ready Have an Account?</Link>
                         </div>
                     </form>
                 </div>
@@ -82,19 +90,16 @@ const Login = () => {
                     <h3 className='fw-bold text-primary'>Also Join With</h3>
                     <div>
                         <i onClick={handleGoogleLogin} style={{
-                            userSelect: 'none',
                             cursor: 'pointer',
                             color: 'tomato',
                             padding: '10px'
-                        }} className="fab fa-google-plus-square fs-6">Google</i>
+                        }} className="fab fa-google-plus-square fs-6">|Google</i>
                         <i style={{
-                            userSelect: 'none',
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
                         }} className="fab fa-facebook-square fs-6">Facebook</i>
                         <i style={{
-                            userSelect: 'none',
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
@@ -106,4 +111,4 @@ const Login = () => {
     );
 };
 
-export default Login;
+export default Register;

@@ -5,7 +5,6 @@ import './Header.css'
 
 const Header = () => {
     const { userData, logOut } = useAuth();
-    console.log(userData);
 
     const { displayName, photoURL, email } = userData;
     return (
