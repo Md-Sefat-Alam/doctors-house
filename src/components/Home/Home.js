@@ -1,4 +1,5 @@
 import React from 'react';
+import ServicePart from '../ServicePart/ServicePart';
 import './Home.css'
 
 const Home = () => {
@@ -43,6 +44,7 @@ const Home = () => {
                 </button>
             </div>
 
+            <ServicePart></ServicePart>
         </div>
     );
 };

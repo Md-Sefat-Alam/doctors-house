@@ -7,27 +7,27 @@ const Footer = () => {
         <footer className='container-fluid bg-dark text-white'>
             <div className='row container footer-wrapper'>
                 <div className='col footer-data'>
-                    <Link style={{ userSelect: 'none' }} className="navbar-brand siteName fs-1 fw-bolder" to='/home'>Doctor's <span className='text-warning'>House</span></Link>
+                    <Link to='/' style={{ userSelect: 'none' }} className="navbar-brand siteName fs-1 fw-bolder" to='/home'>Doctor's <span className='text-warning'>House</span></Link>
                 </div>
                 <div className='col footer-data'>
                     <h3>Select Specialist</h3>
                     <ul>
-                        <Link><li>Dentist</li></Link>
-                        <Link><li>Face Specialist</li></Link>
-                        <Link><li>Hart Specialist</li></Link>
-                        <Link><li>Bones Specialist</li></Link>
-                        <Link><li>Brain Specialist</li></Link>
-                        <Link><li>Eye Specialist</li></Link>
-                        <Link><li>Sexual</li></Link>
-                        <Link><li>Pregnant</li></Link>
-                        <Link><li>Surgery</li></Link>
+                        <Link to='/'><li>Dentist</li></Link>
+                        <Link to='/'><li>Face Specialist</li></Link>
+                        <Link to='/'><li>Hart Specialist</li></Link>
+                        <Link to='/'><li>Bones Specialist</li></Link>
+                        <Link to='/'><li>Brain Specialist</li></Link>
+                        <Link to='/'><li>Eye Specialist</li></Link>
+                        <Link to='/'><li>Sexual</li></Link>
+                        <Link to='/'><li>Pregnant</li></Link>
+                        <Link to='/'><li>Surgery</li></Link>
                     </ul>
                 </div>
                 <div className='col footer-data'>
                     <h3>Top Links</h3>
                     <ul>
-                        <Link><li style={{ color: 'red' }}>Live</li></Link>
-                        <Link><li>Emergency cases</li></Link>
+                        <Link to='/'><li style={{ color: 'red' }}>Live</li></Link>
+                        <Link to='/'><li>Emergency cases</li></Link>
                     </ul>
 
                     <h3>Join With Us</h3>

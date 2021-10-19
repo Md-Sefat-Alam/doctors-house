@@ -10,6 +10,11 @@ import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
+import ShowService from './components/ShowService/ShowService';
+import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import Doctor from './components/Doctor/Doctor';
+import AboutUs from './components/AboutUs/AboutUs';
+import FAQ from './components/FAQ/FAQ';
 
 
 function App() {
@@ -28,11 +33,23 @@ function App() {
             <PrivetRoute path='/services'>
               <OurServices></OurServices>
             </PrivetRoute>
+            <PrivetRoute path='/service/:service_detail'>
+              <ServiceDetails></ServiceDetails>
+            </PrivetRoute>
             <Route path='/login'>
               <Login></Login>
             </Route>
             <Route path='/register'>
               <Register></Register>
+            </Route>
+            <PrivetRoute path='/doctor'>
+              <Doctor></Doctor>
+            </PrivetRoute>
+            <Route path='/about-us'>
+              <AboutUs></AboutUs>
+            </Route>
+            <Route path='/faq'>
+              <FAQ></FAQ>
             </Route>
             <Route path='*'>
               <NotFound></NotFound>

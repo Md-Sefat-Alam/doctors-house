@@ -29,41 +29,29 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <div className='d-flex'>
                                     <div>
-                                        <li><Link className="dropdown-item" to="/">Dentist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Face Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Hart Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Bones Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Brain Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Eye Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Sexual</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Pregnant</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Surgery</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Dentist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Face Specialist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Hart Specialist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Bones Specialist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Brain Specialist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Eye Specialist</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Sexual</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Pregnant</Link></li>
+                                        <li><Link className="dropdown-item" to="/doctor">Surgery</Link></li>
                                     </div>
                                     <div>
-                                        <li><Link className="dropdown-item" to="/">Dentist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Face Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Hart Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Bones Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Brain Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Eye Specialist</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Sexual</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Pregnant</Link></li>
-                                        <li><Link className="dropdown-item" to="/">Surgery</Link></li>
                                     </div>
                                 </div>
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/#">Doctors</Link>
+                            <Link className="nav-link" to="/doctor">Doctors</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link text-danger" to="/#">Live</Link>
+                            <Link className="nav-link" to="/about-us">About Us</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/#">About Us</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/#">FAQ</Link>
+                            <Link className="nav-link" to="/faq">FAQ</Link>
                         </li>
 
                         {

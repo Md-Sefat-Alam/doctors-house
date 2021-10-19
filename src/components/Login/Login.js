@@ -4,7 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
-    const { googleSignIn, setUserData, setError, setIsLoading } = useAuth();
+    const { googleSignIn, setUserData, setError, setIsLoading, githubLogin } = useAuth();
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -26,7 +26,19 @@ const Login = () => {
                 setIsLoading(false)
             })
     }
-    console.log(location.state?.from);
+    const handleGithubLogin = () => {
+        githubLogin()
+            .then(result => {
+                setUserData(result.user);
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.code);
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
 
     const handleEmail = e => {
         setEmail(e.target.value);
@@ -87,18 +99,12 @@ const Login = () => {
                             color: 'tomato',
                             padding: '10px'
                         }} className="fab fa-google-plus-square fs-6">Google</i>
-                        <i style={{
+                        <i onClick={handleGithubLogin} style={{
                             userSelect: 'none',
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-6">Facebook</i>
-                        <i style={{
-                            userSelect: 'none',
-                            cursor: 'pointer',
-                            color: '#1a75c3',
-                            padding: '10px'
-                        }} className="fab fa-twitter-square fs-6">Twitter</i>
+                        }} className="fab fa-facebook-square fs-6">Github</i>
                     </div>
                 </div>
             </div>

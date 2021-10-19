@@ -1,5 +1,5 @@
 import FirebaseInit from '../Firebase/FirebaseInit';
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, GithubAuthProvider } from "firebase/auth";
 import { useState, useEffect } from 'react'
 
 FirebaseInit();
@@ -15,6 +15,11 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
         return signInWithPopup(auth, googleProvider)
     }
+    const githubLogin = () => {
+        const githubProvider = new GithubAuthProvider()
+        return signInWithPopup(auth, githubProvider)
+    }
+
     const logOut = () => {
         signOut(auth)
             .then(() => {
@@ -49,7 +54,8 @@ const useFirebase = () => {
         setError,
         logOut,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        githubLogin
     }
 };
 

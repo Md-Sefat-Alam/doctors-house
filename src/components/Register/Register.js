@@ -9,7 +9,7 @@ import FirebaseInit from '../../Firebase/FirebaseInit';
 FirebaseInit()
 
 const Register = () => {
-    const { googleSignIn, setUserData, setError, setIsLoading } = useAuth();
+    const { googleSignIn, setUserData, setError, setIsLoading, githubLogin } = useAuth();
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -20,6 +20,20 @@ const Register = () => {
 
     const handleGoogleLogin = () => {
         googleSignIn()
+            .then(result => {
+                setUserData(result.user);
+                history.push(redirect_uri)
+            })
+            .catch(error => {
+                setError(error.code);
+            })
+            .finally(() => {
+                setIsLoading(false)
+            })
+    }
+
+    const handleGithubLogin = () => {
+        githubLogin()
             .then(result => {
                 setUserData(result.user);
                 history.push(redirect_uri)
@@ -49,7 +63,6 @@ const Register = () => {
             })
             .catch(error => {
                 setError(error.code);
-                console.log(error.code);
             })
             .finally(() => {
             })
@@ -94,16 +107,11 @@ const Register = () => {
                             color: 'tomato',
                             padding: '10px'
                         }} className="fab fa-google-plus-square fs-6">|Google</i>
-                        <i style={{
+                        <i onClick={handleGithubLogin} style={{
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-6">Facebook</i>
-                        <i style={{
-                            cursor: 'pointer',
-                            color: '#1a75c3',
-                            padding: '10px'
-                        }} className="fab fa-twitter-square fs-6">Twitter</i>
+                        }} className="fab fa-facebook-square fs-6">Github</i>
                     </div>
                 </div>
             </div>

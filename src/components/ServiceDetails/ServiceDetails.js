@@ -1,20 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import ShowService from '../ShowService/ShowService';
+import { useParams } from 'react-router';
 
-const OurServices = () => {
-    const [services, setServices] = useState([])
-    useEffect(() => {
-        fetch("serviceData.json")
-            .then(res => res.json())
-            .then(data => setServices(data))
-
-    }, [])
+const ServiceDetails = () => {
+    const { service_detail } = useParams()
 
     return (
         <div className='component-container'>
-            <div className='container py-5'>
+            <div className='container my-5'>
+                <h2>{service_detail} Form</h2>
+
                 <div className=''>
-                    <h4 className='text-primary'>Enter your problems to get service</h4>
                     <form className="row g-3">
                         <div className="col-md-6">
                             <label htmlFor="inputEmail4" className="form-label">Name</label>
@@ -30,11 +24,7 @@ const OurServices = () => {
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputCity" className="form-label">Address</label>
-                            <input type="text" className="form-control" id="inputCity" />
-                        </div>
-                        <div className="col-md-6">
-                            <label htmlFor="inputCity" className="form-label">Mobile</label>
-                            <input type="tel" className="form-control" id="inputCity" />
+                            <textarea type="text" className="form-control" id="inputCity" />
                         </div>
                         <div className="col-12">
                             <div className="form-check">
@@ -50,21 +40,8 @@ const OurServices = () => {
                     </form>
                 </div>
             </div>
-            <div className='container py-5'>
-                <h3 className='text-primary'>Services</h3>
-                <div className='service_wrapper row'>
-
-                    <div className="row row-cols-1 row-cols-md-3 g-4">
-                        {
-                            services.map(service => <ShowService key={service.id} service={service}></ShowService>
-                            )
-                        }
-                    </div>
-
-                </div>
-            </div>
         </div>
     );
 };
 
-export default OurServices;
+export default ServiceDetails;
