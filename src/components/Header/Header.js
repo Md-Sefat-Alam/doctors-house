@@ -61,7 +61,9 @@ const Header = () => {
                                 :
                                 <div className="nav-item dropdown">
                                     <Link className="nav-link dropdown-toggle d-block" to="/user" id="navbarDropdownUser" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <img src={photoURL ? photoURL : "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"} alt="user" />
+                                        <span style={{ display: 'inline-block', borderRadius: '50%', overflow: 'hidden' }}>
+                                            <img src={photoURL ? photoURL : "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"} alt="user" />
+                                        </span>
                                     </Link>
                                     <ul className="dropdown-menu userDropDown" aria-labelledby="navbarDropdownUser">
                                         <div className='d-flex flex-column'>

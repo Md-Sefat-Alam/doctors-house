@@ -4,18 +4,14 @@
 .siteName{
 
 }
-#navbarDropdownUser{
-    border-radius: 50%;
-    overflow: hidden;
-}
 #navbarDropdownUser img{
     height: 40px;
     width: 40px;
 }
 .userDropDown{
     background-color: lightgray;
-    height: 300px;
-    width: 300px;
+    height: 250px;
+    width: 250px;
     text-align: center;
     
 }

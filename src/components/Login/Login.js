@@ -66,9 +66,8 @@ const Login = () => {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: '100%',
-                height: '90vh'
             }}>
-                <div className='w-50'>
+                <div className='w-75'>
                     <form onSubmit={handleEmailPasswordLogin}>
                         <h3 className='fw-bold text-primary py-3'>Please Login</h3>
                         <div className="row mb-3">
@@ -84,7 +83,7 @@ const Login = () => {
                             </div>
                         </div>
 
-                        <div className='d-flex justify-content-between'>
+                        <div className='d-flex justify-content-between m-2'>
                             <button type="submit" className="btn btn-primary">Sign in</button>
                             <Link to='./register' className='btn btn-warning'>Register?</Link>
                         </div>
@@ -92,19 +91,19 @@ const Login = () => {
                 </div>
                 <div className='mt-5'>
                     <h3 className='fw-bold text-primary'>Also Join With</h3>
-                    <div>
+                    <div className=''>
                         <i onClick={handleGoogleLogin} style={{
                             userSelect: 'none',
                             cursor: 'pointer',
                             color: 'tomato',
                             padding: '10px'
-                        }} className="fab fa-google-plus-square fs-6">Google</i>
+                        }} className="fab fa-google-plus-square fs-1"></i>
                         <i onClick={handleGithubLogin} style={{
                             userSelect: 'none',
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-6">Github</i>
+                        }} className="fab fa-facebook-square fs-1"></i>
                     </div>
                 </div>
             </div>

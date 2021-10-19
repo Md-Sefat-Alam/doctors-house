@@ -1,9 +1,9 @@
 footer{
-    height: 350px;
+    min-height: 350px;
 }
 
 footer .footer-wrapper{
-    height: 350px;
+    min-height: 350px;
     
 }
 footer .footer-wrapper .footer-data{

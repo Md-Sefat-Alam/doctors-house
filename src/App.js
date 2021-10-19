@@ -10,7 +10,6 @@ import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import PrivetRoute from './components/PrivetRoute/PrivetRoute';
-import ShowService from './components/ShowService/ShowService';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Doctor from './components/Doctor/Doctor';
 import AboutUs from './components/AboutUs/AboutUs';

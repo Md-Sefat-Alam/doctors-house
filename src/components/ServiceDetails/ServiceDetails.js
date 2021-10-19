@@ -6,7 +6,7 @@ const ServiceDetails = () => {
     return (
         <div className='component-container'>
             <div className='container my-5'>
-                <h2>{service_detail} Form</h2>
+                <h2 className='text-primary'>{service_detail} Form</h2>
 
                 <div className=''>
                     <form className="row g-3">

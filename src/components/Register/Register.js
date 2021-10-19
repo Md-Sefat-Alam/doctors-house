@@ -73,11 +73,9 @@ const Register = () => {
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
-                justifyContent: 'center',
-                width: '100%',
-                height: '90vh'
-            }}>
-                <div className='w-50'>
+                justifyContent: 'center'
+            }} className='w-100 py-5'>
+                <div className='w-75'>
                     <form onSubmit={handleEmailPasswordRegister}>
                         <h3 className='fw-bold text-warning py-3'>Please Register and Login</h3>
                         <div className="row mb-3">
@@ -106,12 +104,12 @@ const Register = () => {
                             cursor: 'pointer',
                             color: 'tomato',
                             padding: '10px'
-                        }} className="fab fa-google-plus-square fs-6">|Google</i>
+                        }} className="fab fa-google-plus-square fs-1"></i>
                         <i onClick={handleGithubLogin} style={{
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-6">Github</i>
+                        }} className="fab fa-facebook-square fs-1"></i>
                     </div>
                 </div>
             </div>
