@@ -71,7 +71,7 @@ const Header = () => {
                                                 <img src={photoURL ? photoURL : "https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"} alt="user" />
                                             </div>
                                             <div>
-                                                <h3>{displayName ? displayName : 'What is your name?'}</h3>
+                                                <h4>{displayName ? displayName : 'What is your name?'}</h4>
                                                 <p>{email && email}</p>
                                             </div>
                                             <div>

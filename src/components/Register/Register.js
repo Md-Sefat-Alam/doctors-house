@@ -59,7 +59,7 @@ const Register = () => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 alert('Register Successful')
-                history.push('/home')
+                history.push(redirect_uri)
             })
             .catch(error => {
                 setError(error.code);
@@ -98,18 +98,18 @@ const Register = () => {
                     </form>
                 </div>
                 <div className='mt-5'>
-                    <h3 className='fw-bold text-primary'>Also Join With</h3>
+                    <h3 className='fw-bold text-primary'>Also Signin With</h3>
                     <div>
                         <i onClick={handleGoogleLogin} style={{
                             cursor: 'pointer',
                             color: 'tomato',
                             padding: '10px'
-                        }} className="fab fa-google-plus-square fs-1"></i>
+                        }} className="fab fa-google-plus-square fs-6">Google</i>
                         <i onClick={handleGithubLogin} style={{
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-1"></i>
+                        }} className="fab fa-github-square fs-6">Github</i>
                     </div>
                 </div>
             </div>

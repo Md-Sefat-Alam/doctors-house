@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
     const { googleSignIn, setUserData, setError, setIsLoading, githubLogin } = useAuth();
@@ -27,13 +27,17 @@ const Login = () => {
             })
     }
     const handleGithubLogin = () => {
-        githubLogin()
+        const githubProvider = new GithubAuthProvider();
+        const auth = getAuth();
+        signInWithPopup(auth, githubProvider)
             .then(result => {
                 setUserData(result.user);
+                console.log(result.user);
                 history.push(redirect_uri)
             })
             .catch(error => {
                 setError(error.code);
+                console.log(error.code);
             })
             .finally(() => {
                 setIsLoading(false)
@@ -52,6 +56,7 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUserData(result.user);
+                history.push(redirect_uri);
             })
             .catch(error => {
                 setError(error.code)
@@ -90,20 +95,18 @@ const Login = () => {
                     </form>
                 </div>
                 <div className='mt-5'>
-                    <h3 className='fw-bold text-primary'>Also Join With</h3>
+                    <h3 className='fw-bold text-primary'>Also Signin With</h3>
                     <div className=''>
                         <i onClick={handleGoogleLogin} style={{
-                            userSelect: 'none',
                             cursor: 'pointer',
                             color: 'tomato',
                             padding: '10px'
-                        }} className="fab fa-google-plus-square fs-1"></i>
+                        }} className="fab fa-google-plus-square fs-6">Google</i>
                         <i onClick={handleGithubLogin} style={{
-                            userSelect: 'none',
                             cursor: 'pointer',
                             color: '#1a75c3',
                             padding: '10px'
-                        }} className="fab fa-facebook-square fs-1"></i>
+                        }} className="fab fa-github-square fs-6">Github</i>
                     </div>
                 </div>
             </div>
