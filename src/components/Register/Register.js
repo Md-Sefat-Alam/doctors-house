@@ -61,10 +61,10 @@ const Register = () => {
     }
 
     const handleEmailPasswordRegister = (e) => {
+        e.preventDefault()
         if (password.length < 6) {
             return;
         }
-        e.preventDefault()
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
