@@ -14,6 +14,7 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Doctor from './components/Doctor/Doctor';
 import AboutUs from './components/AboutUs/AboutUs';
 import FAQ from './components/FAQ/FAQ';
+import Toasts from './components/Toasts/Toasts';
 
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
               <NotFound></NotFound>
             </Route>
           </Switch>
+          <Toasts></Toasts>
           <Footer />
         </Router>
       </AuthProvider>

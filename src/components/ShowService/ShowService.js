@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ShowService = (props) => {
     const { topic, detail, img_url } = props.service;
+
     return (
         <div className="col">
             <div className="card h-100">

@@ -24,6 +24,7 @@ const useFirebase = () => {
         signOut(auth)
             .then(() => {
                 setUserData({});
+                setError(' Successfully Logout')
             })
             .catch(error => {
                 setError(error.message)

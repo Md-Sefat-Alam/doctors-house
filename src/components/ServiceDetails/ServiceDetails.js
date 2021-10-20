@@ -1,7 +1,12 @@
 import { useParams } from 'react-router';
+import useAuth from '../../hooks/useAuth';
 
 const ServiceDetails = () => {
     const { service_detail } = useParams()
+
+    const { userData } = useAuth();
+
+    const { displayName, email } = userData;
 
     return (
         <div className='component-container'>
@@ -12,11 +17,11 @@ const ServiceDetails = () => {
                     <form className="row g-3">
                         <div className="col-md-6">
                             <label htmlFor="inputEmail4" className="form-label">Name</label>
-                            <input required type="text" className="form-control" id="inputEmail4" />
+                            <input defaultValue={displayName} required type="text" className="form-control" id="inputEmail4" />
                         </div>
                         <div className="col-md-6">
                             <label htmlFor="inputPassword4" className="form-label">Email</label>
-                            <input required type="Email" className="form-control" id="inputPassword4" />
+                            <input defaultValue={email} required type="Email" className="form-control" id="inputPassword4" />
                         </div>
                         <div required className="col-12">
                             <label htmlFor="inputAddress" className="form-label">Problems in Detail</label>

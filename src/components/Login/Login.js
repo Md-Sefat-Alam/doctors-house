@@ -17,23 +17,22 @@ const Login = () => {
         googleSignIn()
             .then(result => {
                 setUserData(result.user);
-                history.push(redirect_uri)
+                history.push(redirect_uri);
+                setError('Login Successful')
             })
             .catch(error => {
                 setError(error.code);
             })
             .finally(() => {
                 setIsLoading(false)
-            })
+            });
     }
     const handleGithubLogin = () => {
-        const githubProvider = new GithubAuthProvider();
-        const auth = getAuth();
-        signInWithPopup(auth, githubProvider)
+        githubLogin()
             .then(result => {
                 setUserData(result.user);
-                console.log(result.user);
-                history.push(redirect_uri)
+                history.push(redirect_uri);
+                setError('Login Successful')
             })
             .catch(error => {
                 setError(error.code);
@@ -49,14 +48,23 @@ const Login = () => {
     }
     const handlePassword = e => {
         setPassword(e.target.value);
+        if (e.target.value.length < 6) {
+            if (e.target.value) {
+                setError('Enter Correct password')
+            }
+        }
     }
     const handleEmailPasswordLogin = (e,) => {
         e.preventDefault()
+        if (password.length < 6) {
+            return;
+        }
         const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
             .then(result => {
                 setUserData(result.user);
                 history.push(redirect_uri);
+                setError('Login Successful')
             })
             .catch(error => {
                 setError(error.code)

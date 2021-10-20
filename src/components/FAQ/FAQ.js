@@ -4,18 +4,6 @@ const FAQ = () => {
     return (
         <div className='component-container container'>
             <div>
-                <div className='py-4'>
-                    <h3 className='text-primary'>Have any Question?</h3>
-                    <div className="mb-3">
-                        <label htmlFor="formGroupExampleInput" className="form-label">Question Title</label>
-                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter Question title" />
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="formGroupExampleInput2" className="form-label">Question Details</label>
-                        <textarea type="text" rows='5' className="form-control" id="formGroupExampleInput2" placeholder="Enter Question in details" />
-                    </div>
-                </div>
-
                 <div className='py-5'>
                     <h3 className='text-primary'>FAQ</h3>
                     <div className="accordion accordion-flush" id="accordionFlushExample">
@@ -50,6 +38,19 @@ const FAQ = () => {
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div className='py-4'>
+                    <h3 className='text-primary'>Have any Question?</h3>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput" className="form-label">Question Title</label>
+                        <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Enter Question title" />
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="formGroupExampleInput2" className="form-label">Question Details</label>
+                        <textarea type="text" rows='5' className="form-control" id="formGroupExampleInput2" placeholder="Enter Question in details" />
+                    </div>
+                    <button className='btn btn-success'>Submit</button>
                 </div>
             </div>
 

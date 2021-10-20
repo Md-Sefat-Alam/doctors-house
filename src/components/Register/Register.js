@@ -23,6 +23,7 @@ const Register = () => {
             .then(result => {
                 setUserData(result.user);
                 history.push(redirect_uri)
+                setError('Login Successful')
             })
             .catch(error => {
                 setError(error.code);
@@ -37,6 +38,7 @@ const Register = () => {
             .then(result => {
                 setUserData(result.user);
                 history.push(redirect_uri)
+                setError('Login Successful')
             })
             .catch(error => {
                 setError(error.code);
@@ -51,9 +53,17 @@ const Register = () => {
     }
     const handlePassword = e => {
         setPassword(e.target.value);
+        if (e.target.value.length < 6) {
+            if (e.target.value) {
+                setError('Enter Minimum 6 char mixing number and character')
+            }
+        }
     }
 
     const handleEmailPasswordRegister = (e) => {
+        if (password.length < 6) {
+            return;
+        }
         e.preventDefault()
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)

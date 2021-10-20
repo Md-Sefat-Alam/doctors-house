@@ -28,3 +28,7 @@
 .userImage img{
     height: 130px;
 }
+.selected{
+    box-sizing: border-box;
+    border-bottom: 2px solid orange;
+}
