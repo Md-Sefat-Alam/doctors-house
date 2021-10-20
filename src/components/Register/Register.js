@@ -68,7 +68,7 @@ const Register = () => {
         const auth = getAuth();
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                alert('Register Successful')
+                setError('Successfully register and Login')
                 history.push(redirect_uri)
             })
             .catch(error => {
